@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+html{
+  font-size: 62.5%;
+}
+body {
+  background-color: #f5ebd2;
+}
+.mainarticle--h2{
+    margin: 6rem 0 0 2rem;
+    font-size: 4rem;
+    font-family: "Ultra", serif;
+    color: #4e2313;
+}
+#cartContainer{
+/* display: flex;
+flex-direction: column;
+align-items: center; */
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+align-items: center;
+justify-items: center;
+}
+.mainarticle--img{
+    width: 60%;
+}
+.mainarticle--p{
+    font-size: 3rem;
+    font-family: "Ultra", serif;
+    margin: .8rem;
+}
+
+.main__article--button{
+    font-size: 1.2rem;
+    font-family: "Ultra", serif;
+    background-color: #bb3e10;
+    width: 50%;
+    border: none;
+    color: #F3F2FD;
+    cursor: pointer;
+    padding: 1rem 4rem;
+    text-decoration: none;
+    transition: background-color linear .3s;
+    border-radius: .6rem;
+    margin: 1rem;
+}
+.buttonBuysCompleted{
+    font-size: 1.2rem;
+    font-family: "Ultra", serif;
+    background-color:  #e92b00;
+    width: 50%;
+    border: none;
+    color: #f8f8f8;
+    cursor: pointer;
+    padding: 1rem 4rem;
+    text-decoration: none;
+    transition: background-color linear .3s;
+    border-radius: .6rem;
+    margin: 1rem;
+}
+.mainArticle--h3{
+    font-size: 2rem;
+    font-family: "Ultra", serif;
+    margin-bottom: 2rem;
+}
+.mainarticle--a{
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+    font-family: "Ultra", serif;
+
+}

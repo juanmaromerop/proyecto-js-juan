@@ -1,9 +1,10 @@
+let cart = [];
 const hamburgersContainer = document.getElementById('hamburgers')
 const cartQuantity = document.getElementById('cartQuantity')
-let cart = []
+
 
 const getHamburgers = async () => {
-    const response = await fetch("./data/hamburgers.json");
+    const response = await fetch("./src/data/hamburgers.json");
     const data = response.json();
     return data
 }
@@ -29,25 +30,29 @@ const addProductToCart = async (id) => {
         cart.push(hamburger)
         setLocalStorage("cart", cart)
     }
+    Swal.fire({
+        icon: 'success',
+        title: 'Agregado al carrito',
+        text: `El producto ${hamburger.nombre} ha sido agregado al carrito`,
+        timer: 2500,
+        showConfirmButton: false
+      })
     getQuantity()
 }
 
 
+const getQuantity = async () => {
+    let cartTotalQuantity = 0
+    cart.forEach(product => cartTotalQuantity += product.cantidad)
+    cartQuantity.innerText = cartTotalQuantity
+
+}
+
 const render = async () => {
     cart = JSON.parse(localStorage.getItem('cart')) || [];
+    getQuantity()
     const hamburgers = await getHamburgers()
-    // for (let hamburger in hamburgers) {
-    //     hamburgersContainer.innerHTML += `<article class="main__article">
-    //     <img class="main__article--img" src="${hamburgers[hamburger].img}"
-    //         alt="${hamburgers[hamburger].nombre}">
-    //     <h2 class="main__article--h2">${hamburgers[hamburger].nombre}</h2>
-    //     <p class="main__article--p">${hamburgers[hamburger].descripcion}</p>
-    //     <button 
-    //         onclick= '(async () => { await addProductToCart (${Number(hamburger) + 1});})()' 
-    //         class="main__article--button">Agregar al carrito
-    //     </button>
-    // </article>`
-    // }
+
     for (let hamburger in hamburgers) {
         const articleContainer = document.createElement('articleCotainer')
         articleContainer.classList.add('articleContainer')
@@ -64,9 +69,13 @@ const render = async () => {
         h2.classList.add('mainarticle--h2');
         h2.innerText = hamburgers[hamburger].nombre;
       
-        const p = document.createElement('p');
-        p.classList.add('mainarticle--p');
-        p.innerText = hamburgers[hamburger].descripcion;
+        const categoria = document.createElement('p');
+        categoria.classList.add('mainarticle--p');
+        categoria.innerText = hamburgers[hamburger].descripcion;
+
+        const precio = document.createElement('p');
+        precio.classList.add('mainarticle--p');
+        precio.innerText = "$" + hamburgers[hamburger].precio;
       
         const button = document.createElement('button');
         button.classList.add('main__article--button');
@@ -77,7 +86,8 @@ const render = async () => {
 
         article.appendChild(img);
         article.appendChild(h2);
-        article.appendChild(p);
+        article.appendChild(categoria);
+        article.appendChild(precio);
         article.appendChild(button);
       
         hamburgersContainer.appendChild(article);
@@ -85,13 +95,5 @@ const render = async () => {
 
 
 }
-
-const getQuantity = async () => {
-    let cartTotalQuantity = 0
-    cart.forEach(product => cartTotalQuantity += product.cantidad)
-    cartQuantity.innerText = cartTotalQuantity
-
-}
-
 
 document.addEventListener("DOMContentLoaded", render())
