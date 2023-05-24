@@ -4,7 +4,7 @@
         "nombre": "Hamburguesa con queso",
         "descripcion": "Hamburguesa con queso cheddar",
         "categoria": "Hamburguesa",
-        "precio": 10.50,
+        "precio": 10,
         "stock": 5,
         "img": "https://res.cloudinary.com/dogupspl8/image/upload/v1671141691/Paginas/BK_WEB_DOBLE-CUARTO-XL_1200X800_020822_hsuxfc.png",
         "cantidad": 0
@@ -24,7 +24,7 @@
         "nombre": "Hamburguesa de pollo",
         "categoria": "Hamburguesas",
         "descripcion": "Hamburguesa con pollo, lechuga y tomate",
-        "precio": 7.99,
+        "precio": 5,
         "stock": 5,
         "img": "https://res.cloudinary.com/dogupspl8/image/upload/v1671141768/Paginas/BK_WEB_Whopper-Guacamole_1200X900_210922_det9pz.png",
         "cantidad": 0
@@ -34,7 +34,7 @@
         "nombre": "Hamburgesa XXL",
         "descripcion": "Hamburguesa con triple carne, panceta y queso cheddar",
         "categoria": "Hamburguesa",
-        "precio": 22.75,
+        "precio": 20,
         "stock": 5,
         "img": "https://res.cloudinary.com/dogupspl8/image/upload/v1671141784/Paginas/Armado-whopper-doble-con-queso_fzgjno.png",
         "cantidad": 0
@@ -45,7 +45,7 @@
         "nombre": "Hamburguesa Camello",
         "categoria": "Hamburguesa",
         "descripcion": "Hamburguesa de camello seca como lengua de gato",
-        "precio": 17.99,
+        "precio": 25,
         "stock": 5,
         "img": "https://res.cloudinary.com/dogupspl8/image/upload/v1671141819/Paginas/Provoking-carne_kidzy0.png",
         "cantidad": 0
