@@ -43,6 +43,22 @@ const total = () => {
     return totalPrecio
 }
 
+// const generateRandomNumber = () => {
+//     const min = 100000;
+//     const max = 999999;
+//     return Math.floor(Math.random() * (max - min +1)) + min;
+//   };
+const generateRandomNumber = () =>{
+    let numberRandom = ''
+    for (let i = 0; i < 6; i++) {
+        const digit = Math.floor(Math.random() * 9) + 1;
+        numberRandom += digit
+    }
+    return numberRandom.toString();
+}
+
+
+
 const render = () => {
 
     if (cart.length === 0) {
@@ -117,9 +133,9 @@ const render = () => {
                 position: 'top-end',
                 icon: 'success',
                 title: 'Su Compra Se Ha Realizado',
-                text: `El precio total de su compra es: $${total()}`,
+                text: `El precio total de su compra es: $${total()} y su numero de compra es  y su codigo de compra es ${generateRandomNumber()}`,
                 showConfirmButton: false,
-                timer: 2000
+                timer: 3000
             });
 
             enptyCart()
